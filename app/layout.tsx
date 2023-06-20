@@ -1,7 +1,11 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import {Noto_Sans} from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const nano = Noto_Sans({
+  subsets: ['cyrillic', 'cyrillic-ext', 'latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-nano',
+});
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,11 +15,11 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }): JSX.Element {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={nano.className}>{children}</body>
     </html>
   );
 }
